@@ -990,7 +990,6 @@ a, button, .contact-item, .skill-tag {
     .section {
         margin-bottom: 12pt;
         padding: 0;
-        break-inside: avoid;
     }
 
     .section-title {
