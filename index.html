@@ -213,37 +213,9 @@
         </footer>
     </div>
 
-    <!-- html2pdf Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-    <!-- PDF Download Function -->
     <script>
         function downloadPDF() {
-            const element = document.querySelector('.resume-container');
-            const printActions = document.querySelector('.print-actions');
-
-            // Hide button and remove border/shadow before capture
-            printActions.style.display = 'none';
-            element.style.boxShadow = 'none';
-            element.style.border = 'none';
-
-            const opt = {
-                margin: [0.5, 0.5, 0.5, 0.5],
-                filename: 'Darko_Dorsett_Resume.pdf',
-                image: { type: 'png', quality: 2 },
-                html2canvas: { scale: 3, allowTaint: true, useCORS: true, logging: false },
-                jsPDF: { format: 'letter', orientation: 'portrait' }
-            };
-
-            html2pdf().set(opt).from(element).save().finally(() => {
-                // Restore after capture
-                printActions.style.display = '';
-                element.style.boxShadow = '';
-                element.style.border = '';
-            }).catch((error) => {
-                console.error('PDF generation error:', error);
-                alert('Error generating PDF. Please try using Ctrl+P and "Save as PDF"');
-            });
+            window.print();
         }
     </script>
 </body>
