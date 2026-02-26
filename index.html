@@ -213,5 +213,18 @@
         </footer>
     </div>
 
+    <script>
+        // Add .is-printing class before print dialog opens,
+        // remove it after — allows JS-driven DOM tweaks alongside @media print CSS.
+        window.addEventListener('beforeprint', () => {
+            document.body.classList.add('is-printing');
+            document.title = 'Darko_Dorsett_Resume';
+        });
+
+        window.addEventListener('afterprint', () => {
+            document.body.classList.remove('is-printing');
+            document.title = 'Darko Dorsett - IT Systems Administrator';
+        });
+    </script>
 </body>
 </html>
