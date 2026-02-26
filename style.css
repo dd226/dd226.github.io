@@ -40,7 +40,7 @@ body {
     background-color: white;
     color: var(--text-dark);
     padding: 40px;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid var(--border-light);
 }
 
@@ -49,26 +49,28 @@ body {
     font-weight: 700;
     letter-spacing: 0.5px;
     margin-bottom: 8px;
-    color: var(--primary-blue);
+    color: var(--primary-dark);
 }
 
 .header .subtitle {
     font-size: 16px;
-    color: var(--text-light);
+    color: var(--primary-blue);
     font-weight: 500;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .header-contact {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: flex-start;
+    gap: 25px;
     font-size: 14px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
-.header-contact span {
+.header-contact .contact-item {
     color: var(--text-light);
+    font-size: 13px;
 }
 
 /* Resume Body - Two Column Layout */
