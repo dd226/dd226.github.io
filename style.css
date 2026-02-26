@@ -964,25 +964,25 @@ a, button, .contact-item, .skill-tag {
         content: none;
     }
 
-    /* --- Two-column layout via floats (Grid causes height-equalization gaps in print) --- */
+    /* --- Two-column layout --- */
     .resume-body {
-        display: block;
+        display: grid;
+        grid-template-columns: 1fr 190pt;
+        gap: 18pt;
         padding: 0;
         margin: 0;
-        overflow: hidden;
-    }
-
-    .right-column {
-        float: right;
-        width: 180pt;
-        border-left: 1pt solid #ccc;
-        padding: 0 0 0 14pt;
-        margin: 0 0 0 16pt;
     }
 
     .left-column {
-        overflow: hidden;
+        grid-column: 1;
         padding: 0;
+        margin: 0;
+    }
+
+    .right-column {
+        grid-column: 2;
+        border-left: 1pt solid #ccc;
+        padding: 0 0 0 14pt;
         margin: 0;
     }
 
