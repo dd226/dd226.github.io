@@ -1049,7 +1049,6 @@ a, button, .contact-item, .skill-tag {
     .experience-item {
         margin-bottom: 10pt;
         padding-bottom: 8pt;
-        break-inside: avoid;
     }
 
     .experience-item:last-child {
