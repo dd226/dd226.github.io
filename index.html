@@ -213,21 +213,34 @@
         </footer>
     </div>
 
-    <!-- PDF Download Library -->
+    <!-- html2pdf Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <!-- PDF Download Function -->
     <script>
         function downloadPDF() {
+            const button = document.querySelector('.pdf-btn');
+            button.disabled = true;
+            button.innerHTML = '<span class="pdf-icon">📄</span><span class="pdf-label">Generating...</span>';
+
             const element = document.querySelector('.resume-container');
             const opt = {
-                margin: 10,
+                margin: [0.5, 0.5, 0.5, 0.5],
                 filename: 'Darko_Dorsett_Resume.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
+                html2canvas: { scale: 2, allowTaint: true, useCORS: true },
                 jsPDF: { format: 'letter', orientation: 'portrait' }
             };
-            html2pdf().set(opt).from(element).save();
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                button.disabled = false;
+                button.innerHTML = '<span class="pdf-icon">📄</span><span class="pdf-label">Download PDF</span>';
+            }).catch((error) => {
+                console.error('PDF generation error:', error);
+                button.disabled = false;
+                button.innerHTML = '<span class="pdf-icon">📄</span><span class="pdf-label">Download PDF</span>';
+                alert('Error generating PDF. Please try using Ctrl+P and "Save as PDF"');
+            });
         }
     </script>
 </body>
