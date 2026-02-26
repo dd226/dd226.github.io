@@ -17,13 +17,26 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 body {
-    font-family: 'Segoe UI', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
     line-height: 1.5;
     color: var(--text-dark);
     background-color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Touch-friendly sizing */
+a, button, .contact-item, .skill-tag {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
 }
 
 .resume-container {
@@ -363,8 +376,13 @@ body {
     color: var(--text-light);
 }
 
-/* Responsive Design */
-@media (max-width: 1000px) {
+/* Responsive Design - iPad and Landscape */
+@media (max-width: 1024px) {
+    .resume-container {
+        max-width: 100%;
+        margin: 20px;
+    }
+
     .resume-body {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -379,82 +397,400 @@ body {
     }
 }
 
+/* Large Tablet - iPad */
 @media (max-width: 768px) {
     .resume-container {
-        box-shadow: none;
+        margin: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     .header {
-        padding: 30px 20px;
+        padding: 30px 25px;
     }
 
     .header h1 {
         font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .header .subtitle {
+        font-size: 16px;
+        margin-bottom: 14px;
     }
 
     .resume-body {
-        padding: 25px 20px;
+        padding: 30px 25px;
         gap: 25px;
     }
 
     .header-contact {
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .header-contact .contact-item {
+        padding: 10px 0;
+        min-height: auto;
+        min-width: auto;
     }
 
     .exp-header {
         flex-direction: column;
-        gap: 2px;
+        gap: 6px;
+        align-items: flex-start;
     }
 
     .exp-header .date {
         white-space: normal;
     }
 
-    .skills-tags {
-        gap: 6px;
+    .exp-bullets li {
+        font-size: 13px;
+        padding: 8px 0;
+        padding-left: 18px;
+        margin-bottom: 8px;
     }
 
     .skill-tag {
-        font-size: 11px;
-        padding: 5px 8px;
+        font-size: 13px;
+        padding: 10px 12px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .project-header {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .project-item p {
+        font-size: 13px;
     }
 }
 
-@media (max-width: 480px) {
+/* Small Tablet / Large Phone - iPhone Plus, iPad Mini */
+@media (max-width: 600px) {
+    .resume-container {
+        margin: 10px;
+    }
+
     .header {
-        padding: 25px 15px;
+        padding: 25px 20px;
+        border-bottom: 1px solid var(--border-light);
     }
 
     .header h1 {
-        font-size: 28px;
-        letter-spacing: 0.5px;
+        font-size: 32px;
+        letter-spacing: 0px;
+        margin-bottom: 8px;
     }
 
     .header .subtitle {
-        font-size: 14px;
+        font-size: 15px;
+        margin-bottom: 12px;
     }
 
     .resume-body {
-        padding: 15px;
+        padding: 20px;
         gap: 20px;
+    }
+
+    .section {
+        margin-bottom: 24px;
     }
 
     .section-title {
         font-size: 12px;
+        padding-bottom: 10px;
+        margin-bottom: 14px;
     }
 
-    .exp-bullets li,
+    .header-contact {
+        gap: 8px;
+    }
+
+    .header-contact .contact-item {
+        font-size: 12px;
+        padding: 8px 0;
+    }
+
+    .education-item {
+        margin-bottom: 16px;
+        padding-bottom: 14px;
+    }
+
+    .education-item h3 {
+        font-size: 13px;
+    }
+
+    .education-item .school {
+        font-size: 12px;
+    }
+
+    .education-item .location {
+        font-size: 12px;
+    }
+
+    .exp-bullets li {
+        font-size: 12px;
+        padding: 6px 0;
+        padding-left: 16px;
+        margin-bottom: 6px;
+        line-height: 1.5;
+    }
+
+    .experience-item {
+        margin-bottom: 24px;
+        padding-bottom: 20px;
+    }
+
+    .exp-header h3 {
+        font-size: 13px;
+    }
+
+    .exp-header .date {
+        font-size: 12px;
+    }
+
+    .company {
+        font-size: 12px;
+    }
+
+    .skill-tag {
+        font-size: 12px;
+        padding: 10px 12px;
+        min-height: 44px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .project-item {
+        margin-bottom: 16px;
+        padding-bottom: 14px;
+    }
+
+    .project-header h3 {
+        font-size: 13px;
+    }
+
+    .project-header .tech {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .project-item p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+/* Small Phone - iPhone SE, iPhone 12 Mini */
+@media (max-width: 480px) {
+    .resume-container {
+        margin: 8px;
+        border: 1px solid #d0d0d0;
+    }
+
+    .header {
+        padding: 20px 16px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+        margin-bottom: 6px;
+    }
+
+    .header .subtitle {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .header-contact {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .header-contact .contact-item {
+        font-size: 11px;
+        padding: 8px 0;
+        line-height: 1.4;
+        word-break: break-word;
+    }
+
+    .resume-body {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .section {
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 11px;
+        padding-bottom: 8px;
+        margin-bottom: 12px;
+        letter-spacing: 0.5px;
+    }
+
     .section p {
         font-size: 12px;
+        line-height: 1.5;
     }
 
-    .achievement-item h4 {
+    .education-item {
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+    }
+
+    .edu-header {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .education-item h3 {
         font-size: 12px;
     }
 
-    .achievement-item p {
+    .education-item .school {
         font-size: 11px;
+    }
+
+    .education-item .location {
+        font-size: 11px;
+    }
+
+    .experience-item {
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .exp-header h3 {
+        font-size: 12px;
+    }
+
+    .exp-header .date {
+        font-size: 11px;
+    }
+
+    .company {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    .exp-bullets li {
+        font-size: 11px;
+        padding: 5px 0;
+        padding-left: 14px;
+        margin-bottom: 5px;
+        line-height: 1.4;
+    }
+
+    .exp-bullets li:before {
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .skill-tag {
+        font-size: 11px;
+        padding: 10px 10px;
+        min-height: 44px;
+        width: 100%;
+    }
+
+    .project-item {
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+    }
+
+    .project-header {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .project-header h3 {
+        font-size: 12px;
+    }
+
+    .project-header h3 a {
+        word-break: break-word;
+    }
+
+    .project-header .tech {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .project-item p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .footer {
+        padding: 16px 20px;
+        font-size: 11px;
+    }
+}
+
+/* iPhone X / 11 Pro / 12 Pro / 13 Pro Notch handling */
+@supports (padding: max(0px)) {
+    body {
+        padding-left: max(12px, env(safe-area-inset-left));
+        padding-right: max(12px, env(safe-area-inset-right));
+    }
+
+    .header {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+    }
+
+    .resume-body {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+}
+
+/* Landscape orientation optimization */
+@media (max-height: 600px) and (orientation: landscape) {
+    .header {
+        padding: 12px 20px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+
+    .header .subtitle {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .resume-body {
+        padding: 12px 16px;
+        gap: 16px;
+    }
+
+    .section {
+        margin-bottom: 16px;
+    }
+
+    .section-title {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    .exp-bullets li {
+        font-size: 11px;
+        margin-bottom: 4px;
     }
 }
 
