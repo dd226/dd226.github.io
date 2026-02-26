@@ -57,6 +57,87 @@ a, button, .contact-item, .skill-tag {
     border-bottom: 1px solid var(--border-light);
 }
 
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.header-content {
+    flex: 1;
+}
+
+.print-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.print-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.print-btn:hover {
+    background-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+}
+
+.print-btn:active {
+    transform: translateY(0);
+}
+
+.print-icon {
+    font-size: 16px;
+}
+
+.print-label {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    .print-label {
+        display: inline;
+    }
+}
+
+.pdf-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-light);
+    color: var(--text-dark);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: help;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.pdf-badge:hover {
+    background-color: #fff3cd;
+    border-color: #ffc107;
+    color: #856404;
+}
+
 .header h1 {
     font-size: 48px;
     font-weight: 700;
@@ -595,7 +676,31 @@ a, button, .contact-item, .skill-tag {
     }
 
     .header {
-        padding: 20px 16px;
+        padding: 16px 12px;
+    }
+
+    .header-top {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .print-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .print-btn {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .print-label {
+        display: inline !important;
+    }
+
+    .pdf-badge {
+        flex: 1;
+        justify-content: center;
     }
 
     .header h1 {
@@ -794,26 +899,113 @@ a, button, .contact-item, .skill-tag {
     }
 }
 
-/* Print Styles */
+/* Print Styles - Optimized for PDF */
 @media print {
-    body {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
         background-color: white;
+        margin: 0;
+        padding: 0;
+        width: 100%;
     }
 
     .resume-container {
         box-shadow: none;
         max-width: 100%;
+        margin: 0;
+        border: none;
+    }
+
+    .header {
+        background-color: white;
+        border-bottom: 2px solid var(--primary-dark);
+        padding: 15px;
+        page-break-after: avoid;
+    }
+
+    .header-top {
+        flex-direction: column;
+    }
+
+    .print-actions {
+        display: none !important;
+    }
+
+    .resume-body {
+        padding: 15px;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .left-column, .right-column {
+        border: none;
+        padding: 0;
+    }
+
+    .section {
+        page-break-inside: avoid;
+        margin-bottom: 15px;
+    }
+
+    .section-title {
+        color: var(--primary-dark);
+        border-bottom: 1px solid #000;
+    }
+
+    .experience-item {
+        page-break-inside: avoid;
+        margin-bottom: 12px;
+    }
+
+    .education-item {
+        page-break-inside: avoid;
+    }
+
+    .project-item {
+        page-break-inside: avoid;
+    }
+
+    .header h1 {
+        color: var(--primary-dark);
+    }
+
+    .header .subtitle {
+        color: var(--text-dark);
+    }
+
+    .header-contact .contact-item {
+        color: var(--text-dark);
+        text-decoration: none;
+    }
+
+    a {
+        color: var(--text-dark);
+        text-decoration: none;
+    }
+
+    .skill-tag {
+        background-color: white;
+        border: 1px solid #333;
+        color: var(--text-dark);
     }
 
     .footer {
         display: none;
     }
 
-    .section {
-        page-break-inside: avoid;
+    /* Avoid widows and orphans */
+    p, li, h3, h4 {
+        widows: 2;
+        orphans: 2;
     }
 
-    .experience-item {
-        page-break-inside: avoid;
+    /* Page size and margins */
+    @page {
+        size: letter;
+        margin: 0.5in;
     }
 }
