@@ -990,7 +990,7 @@ a, button, .contact-item, .skill-tag {
     .section {
         margin-bottom: 12pt;
         padding: 0;
-        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .section-title {
@@ -1017,7 +1017,7 @@ a, button, .contact-item, .skill-tag {
     .education-item {
         margin-bottom: 8pt;
         padding-bottom: 7pt;
-        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .edu-header h3 {
@@ -1047,11 +1047,11 @@ a, button, .contact-item, .skill-tag {
     .experience-item {
         margin-bottom: 10pt;
         padding-bottom: 8pt;
-        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .experience-item:last-child {
-        page-break-after: avoid;
+        break-after: avoid;
     }
 
     .exp-header {
@@ -1094,7 +1094,7 @@ a, button, .contact-item, .skill-tag {
     .project-item {
         margin-bottom: 8pt;
         padding-bottom: 6pt;
-        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .project-header h3 {
@@ -1154,6 +1154,6 @@ a, button, .contact-item, .skill-tag {
     }
 
     h2, h3 {
-        page-break-after: avoid;
+        break-after: avoid;
     }
 }
