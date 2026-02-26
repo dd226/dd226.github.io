@@ -964,29 +964,26 @@ a, button, .contact-item, .skill-tag {
         content: none;
     }
 
-    /* --- Two-column layout via position:fixed ---
-       Fixed positioning pins the right column at the same spot
-       on every printed page, giving a true two-column layout
-       across all pages without height-equalization gaps. --- */
+    /* --- Two-column layout --- */
     .resume-body {
-        display: block;
+        display: grid;
+        grid-template-columns: 1fr 190pt;
+        gap: 18pt;
+        padding: 0;
+        margin: 0;
+    }
+
+    .left-column {
+        grid-column: 1;
         padding: 0;
         margin: 0;
     }
 
     .right-column {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 190pt;
+        grid-column: 2;
         border-left: 1pt solid #ccc;
         padding: 0 0 0 14pt;
-        box-sizing: border-box;
-    }
-
-    .left-column {
-        margin-right: 210pt;
-        padding: 0;
+        margin: 0;
     }
 
     /* --- Sections --- */
