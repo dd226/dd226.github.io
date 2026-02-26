@@ -28,9 +28,11 @@ body {
 
 .resume-container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 40px auto;
     background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #d0d0d0;
+    overflow: hidden;
 }
 
 /* Header */
