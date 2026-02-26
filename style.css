@@ -235,7 +235,7 @@ body {
 /* Skills - Right Column */
 .skills-tags {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 8px;
 }
 
@@ -243,11 +243,14 @@ body {
     background-color: var(--bg-light);
     border: 1px solid var(--border-light);
     color: var(--text-dark);
-    padding: 6px 10px;
+    padding: 8px 12px;
     border-radius: 3px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     transition: all 0.2s ease;
+    display: block;
+    width: 100%;
+    text-align: left;
 }
 
 .skill-tag:hover {
