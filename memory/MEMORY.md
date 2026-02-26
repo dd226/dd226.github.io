@@ -6,16 +6,19 @@
   - Location: /Users/dd226/dd226.github.io
 
 ## Key Patterns & Lessons
-*(To be filled in as we work together)*
+- HTML structure uses two-column layout with left-column and right-column divs
+- Left column: Summary, Education, Experience
+- Right column: Skills, Projects
 
 ## Tools & Commands
-*(Useful commands and workflows for this project)*
+- Git workflow: add → commit → push
+- Commit message format uses Co-Authored-By footer
 
 ## Issues & Solutions
-*(Problems encountered and how they were resolved)*
+- Moved Projects section from left column to right column (under Skills) - 2026-02-26
 
 ## Next Steps
-*(Ongoing tasks and goals)*
+- Update memory and sync to repo after each session
 
 ---
 Last updated: 2026-02-26
