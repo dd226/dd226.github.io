@@ -75,7 +75,7 @@ a, button, .contact-item, .skill-tag {
     flex-shrink: 0;
 }
 
-.print-btn {
+.pdf-btn {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -92,50 +92,28 @@ a, button, .contact-item, .skill-tag {
     min-width: 44px;
 }
 
-.print-btn:hover {
+.pdf-btn:hover {
     background-color: var(--accent-blue);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
 }
 
-.print-btn:active {
+.pdf-btn:active {
     transform: translateY(0);
 }
 
-.print-icon {
+.pdf-icon {
     font-size: 16px;
 }
 
-.print-label {
+.pdf-label {
     display: none;
 }
 
 @media (min-width: 600px) {
-    .print-label {
+    .pdf-label {
         display: inline;
     }
-}
-
-.pdf-badge {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    background-color: var(--bg-light);
-    border: 1px solid var(--border-light);
-    color: var(--text-dark);
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: help;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-}
-
-.pdf-badge:hover {
-    background-color: #fff3cd;
-    border-color: #ffc107;
-    color: #856404;
 }
 
 .header h1 {
@@ -689,18 +667,13 @@ a, button, .contact-item, .skill-tag {
         justify-content: flex-start;
     }
 
-    .print-btn {
+    .pdf-btn {
         flex: 1;
         justify-content: center;
     }
 
-    .print-label {
+    .pdf-label {
         display: inline !important;
-    }
-
-    .pdf-badge {
-        flex: 1;
-        justify-content: center;
     }
 
     .header h1 {
@@ -951,6 +924,10 @@ a, button, .contact-item, .skill-tag {
         text-decoration: none;
         padding: 0;
         min-height: auto;
+    }
+
+    .pdf-btn {
+        display: none !important;
     }
 
     .print-actions {

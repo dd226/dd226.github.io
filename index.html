@@ -26,13 +26,10 @@
                     </div>
                 </div>
                 <div class="print-actions">
-                    <button class="print-btn" onclick="window.print()" title="Print Resume (Ctrl+P)">
-                        <span class="print-icon">🖨️</span>
-                        <span class="print-label">Print</span>
+                    <button class="pdf-btn" onclick="downloadPDF()" title="Download as PDF">
+                        <span class="pdf-icon">📄</span>
+                        <span class="pdf-label">Download PDF</span>
                     </button>
-                    <div class="pdf-badge" title="Print to PDF for a clean document">
-                        <span>📄 PDF</span>
-                    </div>
                 </div>
             </div>
         </header>
@@ -215,5 +212,23 @@
             <p>&copy; 2026 Darko Dorsett</p>
         </footer>
     </div>
+
+    <!-- PDF Download Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- PDF Download Function -->
+    <script>
+        function downloadPDF() {
+            const element = document.querySelector('.resume-container');
+            const opt = {
+                margin: 10,
+                filename: 'Darko_Dorsett_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
 </body>
 </html>
