@@ -71,6 +71,13 @@ body {
 .header-contact .contact-item {
     color: var(--text-light);
     font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.header-contact a.contact-item:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
 }
 
 /* Resume Body - Two Column Layout */
