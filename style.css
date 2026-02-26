@@ -964,11 +964,10 @@ a, button, .contact-item, .skill-tag {
         content: none;
     }
 
-    /* --- Two-column layout via floats ---
-       Grid equalizes column heights causing gaps in print.
-       Floats flow naturally across pages. beforeprint JS moves
-       .right-column before .left-column in the DOM so float: right
-       takes effect before the left column renders. --- */
+    /* --- Two-column layout via position:fixed ---
+       Fixed positioning pins the right column at the same spot
+       on every printed page, giving a true two-column layout
+       across all pages without height-equalization gaps. --- */
     .resume-body {
         display: block;
         padding: 0;
@@ -976,17 +975,18 @@ a, button, .contact-item, .skill-tag {
     }
 
     .right-column {
-        float: right;
+        position: fixed;
+        top: 0;
+        right: 0;
         width: 190pt;
         border-left: 1pt solid #ccc;
         padding: 0 0 0 14pt;
-        margin: 0 0 0 16pt;
+        box-sizing: border-box;
     }
 
     .left-column {
-        overflow: hidden;
+        margin-right: 210pt;
         padding: 0;
-        margin: 0;
     }
 
     /* --- Sections --- */

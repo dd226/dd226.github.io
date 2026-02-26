@@ -216,28 +216,14 @@
     <script>
         // Add .is-printing class before print dialog opens,
         // remove it after — allows JS-driven DOM tweaks alongside @media print CSS.
-        let resumeBody, rightCol, leftCol;
-
         window.addEventListener('beforeprint', () => {
             document.body.classList.add('is-printing');
             document.title = 'Darko_Dorsett_Resume';
-
-            // Floats require the floated element to appear first in the DOM.
-            // Move right column before left column so float: right works correctly.
-            resumeBody = document.querySelector('.resume-body');
-            rightCol   = document.querySelector('.right-column');
-            leftCol    = document.querySelector('.left-column');
-            resumeBody.insertBefore(rightCol, leftCol);
         });
 
         window.addEventListener('afterprint', () => {
             document.body.classList.remove('is-printing');
             document.title = 'Darko Dorsett - IT Systems Administrator';
-
-            // Restore original DOM order
-            if (resumeBody && rightCol) {
-                resumeBody.appendChild(rightCol);
-            }
         });
     </script>
 </body>
