@@ -134,7 +134,7 @@ a, button, .contact-item, .skill-tag {
 }
 
 .section p {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.7;
     color: var(--text-light);
     margin-bottom: 12px;
@@ -161,26 +161,26 @@ a, button, .contact-item, .skill-tag {
 }
 
 .edu-header h3 {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     color: var(--text-dark);
 }
 
 .edu-header .date {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-light);
     font-weight: 600;
 }
 
 .education-item .school {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--primary-blue);
     font-weight: 600;
     margin-bottom: 2px;
 }
 
 .education-item .location {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-light);
     margin: 0;
 }
@@ -237,7 +237,7 @@ a, button, .contact-item, .skill-tag {
 }
 
 .project-item p {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
     color: var(--text-light);
     margin: 0;
@@ -265,13 +265,13 @@ a, button, .contact-item, .skill-tag {
 }
 
 .exp-header h3 {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     color: var(--text-dark);
 }
 
 .exp-header .date {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-light);
     font-weight: 600;
     white-space: nowrap;
@@ -279,7 +279,7 @@ a, button, .contact-item, .skill-tag {
 }
 
 .experience-item .company {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--primary-blue);
     font-weight: 600;
     margin-bottom: 10px;
@@ -292,11 +292,11 @@ a, button, .contact-item, .skill-tag {
 }
 
 .exp-bullets li {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.6;
     color: var(--text-light);
-    margin-bottom: 7px;
-    padding-left: 18px;
+    margin-bottom: 8px;
+    padding-left: 20px;
     position: relative;
 }
 
