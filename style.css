@@ -400,6 +400,24 @@ a, button, .contact-item, .skill-tag {
     border-color: var(--primary-blue);
 }
 
+.skill-group {
+    margin-bottom: 14px;
+}
+
+.skill-group:last-child {
+    margin-bottom: 0;
+}
+
+.skill-category {
+    font-size: 10px !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light) !important;
+    margin-bottom: 4px !important;
+    line-height: 1.4 !important;
+}
+
 /* Key Achievements - Right Column */
 .achievement-item {
     margin-bottom: 18px;
@@ -1132,6 +1150,24 @@ a, button, .contact-item, .skill-tag {
         display: flex;
         flex-direction: column;
         gap: 4pt;
+    }
+
+    .skill-group {
+        margin-bottom: 6pt;
+    }
+
+    .skill-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .skill-category {
+        font-size: 8pt !important;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5pt;
+        color: #666 !important;
+        margin-bottom: 2pt !important;
+        line-height: 1.4 !important;
     }
 
     .skill-tag {
