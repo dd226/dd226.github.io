@@ -22,6 +22,11 @@
   - Removed Asana and System Administration from skills
   - Updated Email Reply Automation project description to mention student collaboration
   - Modified footer content
+- Updated resume summary for director-level positioning (2026-02-26):
+  - Changed from IT support specialist to IT leader focus
+  - Made tone more friendly and personable
+  - Emphasized strategic vision, team leadership, and mentoring
+  - Removed passive "seeking" language
 
 ## Next Steps
 - Update memory and sync to repo after each session
