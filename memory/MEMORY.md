@@ -16,9 +16,16 @@
 
 ## Issues & Solutions
 - Moved Projects section from left column to right column (under Skills) - 2026-02-26
+- Pulled manual edits from GitHub (2026-02-26):
+  - Removed emoji icons from contact section
+  - Updated skills: Windows 2019 Server, Windows 10 & 11
+  - Removed Asana and System Administration from skills
+  - Updated Email Reply Automation project description to mention student collaboration
+  - Modified footer content
 
 ## Next Steps
 - Update memory and sync to repo after each session
+- Continue syncing changes between local and GitHub
 
 ---
 Last updated: 2026-02-26
