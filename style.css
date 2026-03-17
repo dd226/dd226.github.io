@@ -597,10 +597,24 @@ ul   { list-style: none; }
 .bento-card:hover::before { opacity: 1; }
 
 .bento-icon {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 12px;
+    color: var(--violet);
+    margin-bottom: 16px;
     position: relative;
-    display: block;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.bento-card:hover .bento-icon {
+    background: rgba(139, 92, 246, 0.18);
+    border-color: rgba(139, 92, 246, 0.4);
+    color: #c4b5fd;
 }
 
 .bento-card h3 {
